@@ -57,4 +57,4 @@ target/
 *.db
 
 # Setting files
-polen_web/settings/*.py
+polen_web/polen_web/settings/*.py
