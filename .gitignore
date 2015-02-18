@@ -52,3 +52,9 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Database files
+*.db
+
+# Setting files
+polen_web/settings/*.py
