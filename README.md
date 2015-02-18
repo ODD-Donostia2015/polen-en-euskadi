@@ -4,7 +4,7 @@
 
 El objetivo de este proyecto es visualizar estadísticas sobre la incidencia de polen en las 3 capitales vascas: Bilbao, San Sebastián/Donostia y Vitoria-Gasteiz.
 
-Los datos se pueden obtener de [Open Data Euskadi](http://opendata.euskadi.eus/w79-resformx/es?r01kQry=tC:euskadi;tF:opendata;mO:documentName.LIKE.polen,documentDescription.LIKE.polen;m:documentLanguage.EQ.es;p:Inter) tanto en formato CSV como en XLS.
+Los datos se pueden obtener de [Open Data Euskadi](http://opendata.euskadi.eus/w79-resformx/es?r01kQry=tC:euskadi;tF:opendata;mO:documentName.LIKE.polen,documentDescription.LIKE.polen;m:documentLanguage.EQ.es;p:Inter) tanto en formato CSV como en XLS. [Euskalmet](http://www.euskalmet.euskadi.eus/s07-5853x/es/contenidos/informacion/inf_polen/es_7728/es_polen.html) también ofrece esta información a través de PDF.
 
 Los tipos de polen que figuran en estos archivos son:
 - Acer
