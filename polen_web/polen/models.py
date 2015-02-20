@@ -11,15 +11,11 @@ class Group(models.Model):
         max_length=50,
     )
 
-    low_level_bottom_limit = models.PositiveSmallIntegerField(
+    low_level_upper_limit = models.PositiveSmallIntegerField(
         default=0,
     )
 
-    medium_level_bottom_limit = models.PositiveSmallIntegerField(
-        default=0,
-    )
-
-    high_level_bottom_limit = models.PositiveSmallIntegerField(
+    medium_level_upper_limit = models.PositiveSmallIntegerField(
         default=0,
     )
 
@@ -55,21 +51,6 @@ class Measurement(models.Model):
         default=0,
         blank=True,
     )
-
-
-####################################################################################################
-###     AllergenInGroup
-####################################################################################################
-
-class AllergenInGroup(models.Model):
-
-    allergen = models.ForeignKey('Allergen')
-
-    group = models.ForeignKey('Group')
-
-    class Meta:
-        unique_together = ('allergen', 'group')
-        verbose_name_plural = 'Allergens in group'
 
 
 ####################################################################################################
