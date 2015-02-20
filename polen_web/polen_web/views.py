@@ -13,8 +13,6 @@ from polen.models import *
 def home(request):
 
     _create_superuser()
-    _load_sensor_stations()
-    _load_groups()
 
     return_dict = {
         'sensor_stations': Sensor.objects.all(),
