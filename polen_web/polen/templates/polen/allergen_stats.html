@@ -23,7 +23,7 @@
             var data = google.visualization.arrayToDataTable([
                 ['date', 'value', 'medium', 'high'],
 
-                {% for _m in measurements %}
+                {% for m in measurements %}
                     ['{{ m.date|date:"y/m/d" }}', {{ m.value }}, {{ medium_value }}, {{ high_value }}],
                 {% endfor %}
             ]);
