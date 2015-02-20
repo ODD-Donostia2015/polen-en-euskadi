@@ -61,13 +61,13 @@ class Allergen(models.Model):
     )
 
     class Meta:
-        ordering = ['name']
+        ordering = ['pollen_type']
 
     def __unicode__(self):
-        return self.name
+        return self.pollen_type
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
+        self.slug = slugify(self.pollen_type)
 
         super(Allergen, self).save(*args, **kwargs)
 
