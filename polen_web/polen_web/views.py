@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from django.contrib.auth.models import User
 from polen.models import *
@@ -118,7 +118,7 @@ def load_initial_data(request):
     )
     acer.save()
 
-    acerGroup=AllergenInGroup(
+    acerGroup = AllergenInGroup(
         allergen=acer,
         group=group_3
     )
@@ -130,13 +130,12 @@ def load_initial_data(request):
 
     )
     aesculus.save()
-    
-    aesculusGroup=AllergenInGroup(
+
+    aesculusGroup = AllergenInGroup(
         allergen=aesculus,
         group=None
     )
     aesculusGroup.save()
-
 
     alnus = Allergen(
         pollen_type=u'Alnus',
@@ -144,7 +143,7 @@ def load_initial_data(request):
 
     )
     alnus.save()
-    alnusGroup=AllergenInGroup(
+    alnusGroup = AllergenInGroup(
         allergen=alnus,
         group=group_3
     )
@@ -156,7 +155,7 @@ def load_initial_data(request):
 
     )
     artemisia.save()
-    artemisiaGroup=AllergenInGroup(
+    artemisiaGroup = AllergenInGroup(
         allergen=artemisia,
         group=group_2
     )
@@ -169,7 +168,7 @@ def load_initial_data(request):
     )
     betula.save()
 
-    betulaGroup=AllergenInGroup(
+    betulaGroup = AllergenInGroup(
         allergen=betula,
         group=group_3
     )
@@ -181,8 +180,8 @@ def load_initial_data(request):
 
     )
     buxus.save()
-    
-    buxusGroup=AllergenInGroup(
+
+    buxusGroup = AllergenInGroup(
         allergen=buxus,
         group=None
     )
@@ -194,7 +193,7 @@ def load_initial_data(request):
 
     )
     carex.save()
-    carexGroup=AllergenInGroup(
+    carexGroup = AllergenInGroup(
         allergen=carex,
         group=None
     )
@@ -206,7 +205,7 @@ def load_initial_data(request):
 
     )
     castanea.save()
-    castaneaGroup=AllergenInGroup(
+    castaneaGroup = AllergenInGroup(
         allergen=castanea,
         group=group_3
     )
@@ -217,7 +216,7 @@ def load_initial_data(request):
 
     )
     casuarina.save()
-    casuarinaGroup=AllergenInGroup(
+    casuarinaGroup = AllergenInGroup(
         allergen=casuarina,
         group=group_3
     )
@@ -229,7 +228,7 @@ def load_initial_data(request):
 
     )
     cedrus.save()
-    cedrusGroup=AllergenInGroup(
+    cedrusGroup = AllergenInGroup(
         allergen=cedrus,
         group=None
     )
@@ -241,7 +240,7 @@ def load_initial_data(request):
 
     )
     cistaceae.save()
-    cistaceaeGroup=AllergenInGroup(
+    cistaceaeGroup = AllergenInGroup(
         allergen=cistaceae,
         group=None
     )
@@ -253,7 +252,7 @@ def load_initial_data(request):
 
     )
     compositae_others.save()
-    compositae_othersGroup=AllergenInGroup(
+    compositae_othersGroup = AllergenInGroup(
         allergen=compositae_others,
         group=None
     )
@@ -265,7 +264,7 @@ def load_initial_data(request):
 
     )
     corylus.save()
-    corylusGroup=AllergenInGroup(
+    corylusGroup = AllergenInGroup(
         allergen=corylus,
         group=group_3
     )
@@ -277,7 +276,7 @@ def load_initial_data(request):
 
     )
     cupress_taxaceae.save()
-    cupress_taxaceaeGroup=AllergenInGroup(
+    cupress_taxaceaeGroup = AllergenInGroup(
         allergen=cupress_taxaceae,
         group=group_4
     )
@@ -289,7 +288,7 @@ def load_initial_data(request):
 
     )
     cyperus.save()
-    cyperusGroup=AllergenInGroup(
+    cyperusGroup = AllergenInGroup(
         allergen=cyperus,
         group=None
     )
@@ -301,7 +300,7 @@ def load_initial_data(request):
 
     )
     chenopo_amarant.save()
-    chenopo_amarantGroup=AllergenInGroup(
+    chenopo_amarantGroup = AllergenInGroup(
         allergen=chenopo_amarant,
         group=group_2
     )
@@ -311,7 +310,7 @@ def load_initial_data(request):
         plant_tree=u''
     )
     equium.save()
-    equiumGroup=AllergenInGroup(
+    equiumGroup = AllergenInGroup(
         allergen=equium,
         group=group_1
     )
@@ -322,7 +321,7 @@ def load_initial_data(request):
 
     )
     ericaceae.save()
-    ericaceaeGroup=AllergenInGroup(
+    ericaceaeGroup = AllergenInGroup(
         allergen=ericaceae,
         group=group_2
     )
@@ -333,7 +332,7 @@ def load_initial_data(request):
 
     )
     eucalyptus.save()
-    eucalyptusGroup=AllergenInGroup(
+    eucalyptusGroup = AllergenInGroup(
         allergen=eucalyptus,
         group=group_3
     )
@@ -345,7 +344,7 @@ def load_initial_data(request):
 
     )
     fraxinus.save()
-    fraxinusGroup=AllergenInGroup(
+    fraxinusGroup = AllergenInGroup(
         allergen=fraxinus,
         group=None
     )
@@ -357,7 +356,7 @@ def load_initial_data(request):
 
     )
     gleditsia.save()
-    gleditsiaGroup=AllergenInGroup(
+    gleditsiaGroup = AllergenInGroup(
         allergen=gleditsia,
         group=None
     )
@@ -369,7 +368,7 @@ def load_initial_data(request):
 
     )
     juglans.save()
-    juglansGroup=AllergenInGroup(
+    juglansGroup = AllergenInGroup(
         allergen=juglans,
         group=None
     )
@@ -381,11 +380,12 @@ def load_initial_data(request):
 
     )
     juncaceae.save()
-    juncaceaeGroup=AllergenInGroup(
+
+    juncaceaeGroup = AllergenInGroup(
         allergen=juncaceae,
         group=None
     )
-    juncaceaGroup.save()
+    juncaceaeGroup.save()
 
     labiateae = Allergen(
         pollen_type=u'Labiateae',
@@ -393,7 +393,7 @@ def load_initial_data(request):
 
     )
     labiateae.save()
-    labiateaeGroup=AllergenInGroup(
+    labiateaeGroup = AllergenInGroup(
         allergen=labiateae,
         group=None
     )
@@ -405,7 +405,7 @@ def load_initial_data(request):
 
     )
     ligustrum.save()
-    ligustrumGroup=AllergenInGroup(
+    ligustrumGroup = AllergenInGroup(
         allergen=ligustrum,
         group=group_3
     )
@@ -417,7 +417,7 @@ def load_initial_data(request):
 
     )
     mercurialis.save()
-    mercurialisGroup=AllergenInGroup(
+    mercurialisGroup = AllergenInGroup(
         allergen=mercurialis,
         group=group_1
     )
@@ -429,7 +429,7 @@ def load_initial_data(request):
 
     )
     mimosa.save()
-    mimosaGroup=AllergenInGroup(
+    mimosaGroup = AllergenInGroup(
         allergen=mimosa,
         group=None
     )
@@ -441,7 +441,7 @@ def load_initial_data(request):
 
     )
     morus.save()
-    morusGroup=AllergenInGroup(
+    morusGroup = AllergenInGroup(
         allergen=morus,
         group=None
     )
@@ -453,7 +453,7 @@ def load_initial_data(request):
 
     )
     unidentified.save()
-    unidentifiedGroup=AllergenInGroup(
+    unidentifiedGroup = AllergenInGroup(
         allergen=unidentified,
         group=None
     )
@@ -464,7 +464,7 @@ def load_initial_data(request):
         plant_tree=u'Olivo'
     )
     olea.save()
-    oleaGroup=AllergenInGroup(
+    oleaGroup = AllergenInGroup(
         allergen=olea,
         group=group_4
     )
@@ -476,7 +476,7 @@ def load_initial_data(request):
 
     )
     palmaceae.save()
-    palmaceaeGroup=AllergenInGroup(
+    palmaceaeGroup = AllergenInGroup(
         allergen=palmaceae,
         group=None
     )
@@ -487,7 +487,7 @@ def load_initial_data(request):
         plant_tree=u'Pino, abeto'
     )
     pinus.save()
-    pinusGroup=AllergenInGroup(
+    pinusGroup = AllergenInGroup(
         allergen=pinus,
         group=group_4
     )
@@ -498,7 +498,7 @@ def load_initial_data(request):
         plant_tree=u'Llantén'
     )
     plantago.save()
-    plantagoGroup=AllergenInGroup(
+    plantagoGroup = AllergenInGroup(
         allergen=plantago,
         group=group_2
     )
@@ -510,7 +510,7 @@ def load_initial_data(request):
         #group=group_4,
     )
     platanus.save()
-    platanusGroup=AllergenInGroup(
+    platanusGroup = AllergenInGroup(
         allergen=platanus,
         group=group_4
     )
@@ -522,7 +522,7 @@ def load_initial_data(request):
 
     )
     poaceae.save()
-    poaceaeGroup=AllergenInGroup(
+    poaceaeGroup = AllergenInGroup(
         allergen=poaceae,
         group=group_2
     )
@@ -534,7 +534,7 @@ def load_initial_data(request):
 
     )
     populus.save()
-    populusGroup=AllergenInGroup(
+    populusGroup = AllergenInGroup(
         allergen=populus,
         group=group_4
     )
@@ -546,7 +546,7 @@ def load_initial_data(request):
 
     )
     quercus.save()
-    quercusGroup=AllergenInGroup(
+    quercusGroup = AllergenInGroup(
         allergen=quercus,
         group=group_4
     )
@@ -558,7 +558,7 @@ def load_initial_data(request):
 
     )
     rosacea.save()
-    rosaceaGroup=AllergenInGroup(
+    rosaceaGroup = AllergenInGroup(
         allergen=rosacea,
         group=None
     )
@@ -570,7 +570,7 @@ def load_initial_data(request):
 
     )
     rumex.save()
-    rumexGroup=AllergenInGroup(
+    rumexGroup = AllergenInGroup(
         allergen=rumex,
         group=group_2
     )
@@ -582,7 +582,7 @@ def load_initial_data(request):
 
     )
     salix.save()
-    salixGroup=AllergenInGroup(
+    salixGroup = AllergenInGroup(
         allergen=salix,
         group=None
     )
@@ -594,7 +594,7 @@ def load_initial_data(request):
 
     )
     sophora.save()
-    sophoraGroup=AllergenInGroup(
+    sophoraGroup = AllergenInGroup(
         allergen=sophora,
         group=None
     )
@@ -606,7 +606,7 @@ def load_initial_data(request):
 
     )
     taraxacum.save()
-    taraxacumGroup=AllergenInGroup(
+    taraxacumGroup = AllergenInGroup(
         allergen=taraxacum,
         group=None
     )
@@ -618,7 +618,7 @@ def load_initial_data(request):
 
     )
     tilia.save()
-    tiliaGroup=AllergenInGroup(
+    tiliaGroup = AllergenInGroup(
         allergen=tilia,
         group=None
     )
@@ -630,7 +630,7 @@ def load_initial_data(request):
 
     )
     typha.save()
-    typhaGroup=AllergenInGroup(
+    typhaGroup = AllergenInGroup(
         allergen=typha,
         group=None
     )
@@ -642,7 +642,7 @@ def load_initial_data(request):
 
     )
     ulmus.save()
-    ulmusGroup=AllergenInGroup(
+    ulmusGroup = AllergenInGroup(
         allergen=ulmus,
         group=group_3
     )
@@ -654,7 +654,7 @@ def load_initial_data(request):
 
     )
     umbelliferae.save()
-    umbelliferaeGroup=AllergenInGroup(
+    umbelliferaeGroup = AllergenInGroup(
         allergen=umbelliferae,
         group=None
     )
@@ -666,8 +666,10 @@ def load_initial_data(request):
 
     )
     urticaceae.save()
-    urticaceaeGroup=AllergenInGroup(
+    urticaceaeGroup = AllergenInGroup(
         allergen=urticaceae,
         group=None
     )
     urticaceaeGroup.save()
+
+    return redirect('home')
