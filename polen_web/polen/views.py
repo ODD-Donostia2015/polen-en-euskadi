@@ -30,6 +30,8 @@ def allergen_stats(request, allergen_slug):
         allergen=allergen,
     )
 
+    colors = []
+
     allergen_in_group = AllergenInGroup.objects.filter(allergen=allergen)[0]
 
     if allergen_in_group:
@@ -40,10 +42,19 @@ def allergen_stats(request, allergen_slug):
         medium_value = 0
         high_value = 0
 
+    for m in measurements:
+        if m.value > high_value:
+            m.color = 'red'
+        elif m.value > medium_value:
+            m.color = 'orange'
+        else:
+            m.color = 'green'
+
     return_dict = {
         'measurements': measurements,
         'medium_value': medium_value,
         'high_value': high_value,
+        'colors': colors,
     }
 
     return render(request, 'polen/allergen_stats.html', return_dict)

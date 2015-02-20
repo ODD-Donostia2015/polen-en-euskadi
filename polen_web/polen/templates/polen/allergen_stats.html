@@ -6,6 +6,7 @@
 {% block content %}
 
     <div id="allergen_measurements"></div>
+    <div id="allergen_measurements_calendar"></div>
 
 {% endblock %}
 
@@ -16,8 +17,9 @@
     <script src="{% static 'js/google-charts.js' %}"></script>
 
     <script>
-        google.load("visualization", "1", {packages:["corechart"]});
+        google.load("visualization", "1.1", {packages:["corechart", "calendar"]});
         google.setOnLoadCallback(drawChart);
+        google.setOnLoadCallback(drawChart2);
 
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
@@ -45,7 +47,26 @@
 
             var chart = new google.visualization.ColumnChart(document.getElementById("allergen_measurements"));
             chart.draw(view, options);
-        }
+        };
+
+        function drawChart2() {
+            var dataTable = new google.visualization.DataTable();
+            dataTable.addColumn({ type: 'date', id: 'Date' });
+            dataTable.addColumn({ type: 'number', id: 'Value' });
+
+            {% for m in measurements %}
+                dataTable.addRow([new Date({{ m.date|date:"Y"}},{{ m.date|date:"m"}},{{ m.date|date:"j"}}), {{ m.value }}]);
+            {% endfor %}
+
+            var options = {
+                title : 'Measurements for allergen',
+                width: 1200,
+                height: 550
+            };
+
+            var chart = new google.visualization.Calendar(document.getElementById("allergen_measurements_calendar"));
+            chart.draw(dataTable, options);
+        };
     </script>
 
 {% endblock %}
