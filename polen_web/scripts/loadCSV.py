@@ -20,7 +20,7 @@ def load(file, sensor_name):
 		reader.next()
 		header = reader.next()
 
-		year = header[0].replace(',', '.')
+		year = header[0].replace(',', '')
 
 		sensor = Sensor.objects.get(name=sensor_name)
 
@@ -30,7 +30,13 @@ def load(file, sensor_name):
 
 			for index, value in enumerate(row[2:]):
 				print header[index + 2]
-				allergen = Allergen.objects.get(pollen_type=header[index + 2])
+				try:
+					allergen = Allergen.objects.get(pollen_type=header[index + 2])
 
-				m = Measurement(date=date, allergen=allergen, sensor=sensor, value=value)
-				m.save()
+					if value == '':
+						value = 0
+
+					m = Measurement(date=date, allergen=allergen, sensor=sensor, value=value)
+					m.save()
+				except:
+					print 'Allergen %s not found' % header[index + 2]
