@@ -13,16 +13,16 @@ def replaceMonth(date):
 
 	return date
 
-def load(file):
+def load(file, sensor_name):
 	with open(file, 'rb') as csvfile:
 		reader = csv.reader(csvfile, delimiter=';')
 
-		place = reader.next()[0]
+		reader.next()
 		header = reader.next()
 
 		year = header[0].replace(',', '.')
 
-		sensor = Sensor.objects.get(name=place)
+		sensor = Sensor.objects.get(name=sensor_name)
 
 		for row in reader:	
 			month = replaceMonth(row[0])
