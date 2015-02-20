@@ -1,0 +1,19 @@
+{% extends "polen_web/base.html" %}
+{% load staticfiles %}
+
+
+
+{% block content %}
+    {% for allergen in allergens %}
+        <li>
+            <a href="">
+                {{ allergen.pollen_type }}
+            </a>
+        </li>
+    {% endfor %}
+{% endblock %}
+
+
+
+{% block scripts %}
+{% endblock %}

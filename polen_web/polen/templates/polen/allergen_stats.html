@@ -1,0 +1,51 @@
+{% extends "polen_web/base.html" %}
+{% load staticfiles %}
+
+
+
+{% block content %}
+
+    <div id="allergen_measurements"></div>
+
+{% endblock %}
+
+
+
+{% block scripts %}
+
+    <script src="{% static 'js/google-charts.js' %}"></script>
+
+    <script>
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['date', 'value', 'medium', 'high'],
+
+                {% for _m in measurements %}
+                    ['{{ _m.date|date:"y/m/d" }}', {{ _m.value }}, {{ medium_value }}, {{ high_value }}],
+                {% endfor %}
+            ]);
+
+            var view = new google.visualization.DataView(data);
+
+            var options = {
+                title : 'Measurements for allergen',
+                vAxis: {title: "Value"},
+                hAxis: {title: "Day"},
+                width: 1200,
+                height: 550,
+                series: {
+                    0: {type: "bar"},
+                    1: {type: "line"},
+                    2: {type: "line"},
+                }
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById("allergen_measurements"));
+            chart.draw(view, options);
+        }
+    </script>
+
+{% endblock %}
