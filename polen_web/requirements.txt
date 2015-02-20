@@ -2,3 +2,5 @@ Django==1.7.4
 Unipath==1.1
 django-suit==0.2.12
 sqlparse==0.1.14
+python-dateutil==2.4.0
+
