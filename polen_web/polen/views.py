@@ -30,10 +30,20 @@ def allergen_stats(request, allergen_slug):
         allergen=allergen,
     )
 
+    allergen_in_group = AllergenInGroup.objects.filter(allergen=allergen)[0]
+
+    if allergen_in_group:
+        medium_value = allergen_in_group.group.low_level_upper_limit
+        high_value = allergen_in_group.group.medium_level_upper_limit
+
+    else:
+        medium_value = 0
+        high_value = 0
+
     return_dict = {
         'measurements': measurements,
-        'medium_value': 25,
-        'high_value': 50,
+        'medium_value': medium_value,
+        'high_value': high_value,
     }
 
     return render(request, 'polen/allergen_stats.html', return_dict)
