@@ -96,6 +96,8 @@ class Measurement(models.Model):
 
     allergen = models.ForeignKey('Allergen')
 
+    sensor = models.ForeignKey('Sensor')
+
     value = models.PositiveSmallIntegerField(
         default=0,
         blank=True,
