@@ -6,7 +6,7 @@
 {% block content %}
     {% for allergen in allergens %}
         <li>
-            <a href="">
+            <a href="{% url 'allergen_stats' allergen.slug %}">
                 {{ allergen.pollen_type }}
             </a>
         </li>

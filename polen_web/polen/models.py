@@ -80,7 +80,7 @@ class AllergenInGroup(models.Model):
 
     allergen = models.ForeignKey('Allergen')
 
-    group = models.ForeignKey('Group')
+    group = models.ForeignKey('Group', blank=True, null=True)
 
     class Meta:
         verbose_name_plural = 'Allergens in group'

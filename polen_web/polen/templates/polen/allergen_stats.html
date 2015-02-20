@@ -24,7 +24,7 @@
                 ['date', 'value', 'medium', 'high'],
 
                 {% for _m in measurements %}
-                    ['{{ _m.date|date:"y/m/d" }}', {{ _m.value }}, {{ medium_value }}, {{ high_value }}],
+                    ['{{ m.date|date:"y/m/d" }}', {{ m.value }}, {{ medium_value }}, {{ high_value }}],
                 {% endfor %}
             ]);
 
